@@ -1,3 +1,4 @@
+import '@/globals.css';
 import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -15,12 +16,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <style>{
-          /* 這裡直接嵌入最基礎的 CSS，確保網站不崩潰 */
-          body { margin: 0; padding: 0; font-family: sans-serif; }
-        }</style>
-      </head>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           {children}

@@ -1,6 +1,5 @@
-export const dynamic = 'force-dynamic';
 'use client'
-
+export const dynamic = 'force-dynamic';
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider'
@@ -247,4 +246,5 @@ export default function Dashboard() {
     </div>
   )
 }
+
 

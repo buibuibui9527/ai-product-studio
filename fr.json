@@ -1,0 +1,21 @@
+{
+  "login": "Se connecter avec Google",
+  "logout": "Se déconnecter",
+  "welcome": "Transformez vos photos de produits avec l'IA",
+  "login_description": "Obtenez 3 crédits gratuits pour commencer",
+  "generate": "Générer",
+  "processing": "L'IA conçoit votre produit...",
+  "loading": "Chargement...",
+  "upload_image": "Téléchargez votre image de produit",
+  "click_to_upload": "Cliquez pour télécharger ou glissez-déposez",
+  "select_style": "Choisissez votre style",
+  "result": "Comparaison avant-après",
+  "download": "Télécharger le résultat",
+  "credits": "Crédits",
+  "style_luxury": "Marbre de luxe",
+  "style_minimal": "Studio minimaliste",
+  "style_outdoor": "Nature en plein air",
+  "style_luxury_marble_desc": "Fond en marbre premium avec éclairage cinématographique",
+  "style_minimal_studio_desc": "Studio blanc épuré avec ombres douces",
+  "style_outdoor_nature_desc": "Environnement naturel en plein air avec lumière du jour"
+}

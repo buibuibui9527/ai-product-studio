@@ -1,0 +1,21 @@
+{
+  "login": "Accedi con Google",
+  "logout": "Esci",
+  "welcome": "Trasforma le tue foto di prodotti con l'IA",
+  "login_description": "Ottieni 3 crediti gratuiti per iniziare",
+  "generate": "Genera",
+  "processing": "L'IA sta progettando il tuo prodotto...",
+  "loading": "Caricamento...",
+  "upload_image": "Carica la tua immagine del prodotto",
+  "click_to_upload": "Clicca per caricare o trascina e rilascia",
+  "select_style": "Scegli il tuo stile",
+  "result": "Confronto prima e dopo",
+  "download": "Scarica risultato",
+  "credits": "Crediti",
+  "style_luxury": "Marmo di lusso",
+  "style_minimal": "Studio minimalista",
+  "style_outdoor": "Natura all'aperto",
+  "style_luxury_marble_desc": "Sfondo in marmo premium con illuminazione cinematografica",
+  "style_minimal_studio_desc": "Studio bianco pulito con ombre morbide",
+  "style_outdoor_nature_desc": "Ambiente naturale all'aperto con luce del giorno"
+}

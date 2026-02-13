@@ -1,0 +1,21 @@
+{
+  "login": "Mit Google anmelden",
+  "logout": "Abmelden",
+  "welcome": "Verwandeln Sie Ihre Produktfotos mit KI",
+  "login_description": "Erhalten Sie 3 kostenlose Credits zum Start",
+  "generate": "Generieren",
+  "processing": "KI gestaltet Ihr Produkt...",
+  "loading": "Wird geladen...",
+  "upload_image": "Laden Sie Ihr Produktbild hoch",
+  "click_to_upload": "Klicken Sie zum Hochladen oder ziehen Sie die Datei",
+  "select_style": "Wählen Sie Ihren Stil",
+  "result": "Vorher-Nachher-Vergleich",
+  "download": "Ergebnis herunterladen",
+  "credits": "Credits",
+  "style_luxury": "Luxus-Marmor",
+  "style_minimal": "Minimalistisches Studio",
+  "style_outdoor": "Natur im Freien",
+  "style_luxury_marble_desc": "Premium-Marmorhintergrund mit kinoreifer Beleuchtung",
+  "style_minimal_studio_desc": "Sauberes weißes Studio mit weichen Schatten",
+  "style_outdoor_nature_desc": "Natürliche Außenumgebung mit Tageslicht"
+}

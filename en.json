@@ -1,0 +1,21 @@
+{
+  "login": "Sign in with Google",
+  "logout": "Logout",
+  "welcome": "Transform your product photos with AI",
+  "login_description": "Get 3 free credits to start",
+  "generate": "Generate",
+  "processing": "AI is designing your product...",
+  "loading": "Loading...",
+  "upload_image": "Upload Your Product Image",
+  "click_to_upload": "Click to upload or drag and drop",
+  "select_style": "Choose Your Style",
+  "result": "Before & After Comparison",
+  "download": "Download Result",
+  "credits": "Credits",
+  "style_luxury": "Luxury Marble",
+  "style_minimal": "Minimal Studio",
+  "style_outdoor": "Outdoor Nature",
+  "style_luxury_marble_desc": "Premium marble background with cinematic lighting",
+  "style_minimal_studio_desc": "Clean white studio with soft shadows",
+  "style_outdoor_nature_desc": "Natural outdoor environment with daylight"
+}

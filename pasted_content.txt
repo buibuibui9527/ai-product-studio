@@ -1,0 +1,168 @@
+
+---------------------------------------------------
+
+Dashboard UI（Zero Text 完整版）
+檔案路徑：app/[locale]/dashboard/page.tsx
+
+'use client'
+
+import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
+import { ReactCompareSlider } from 'react-compare-slider'
+
+export default function Dashboard() {
+  const t = useTranslations()
+  const [imageUrl, setImageUrl] = useState<string>()
+  const [style, setStyle] = useState<string>()
+  const [jobId, setJobId] = useState<string>()
+  const [result, setResult] = useState<string>()
+  const [loading, setLoading] = useState(false)
+
+  // 注意：實際專案中，這裡應該先將檔案上傳至 Supabase Storage 取得公開 URL
+  // 此處僅為示意邏輯
+  const generate = async () => {
+    if (!imageUrl || !style) return
+
+    setLoading(true)
+
+    const res = await fetch('/api/generate', {
+      method: 'POST',
+      body: JSON.stringify({ imageUrl, style_id: style })
+    })
+
+    const data = await res.json()
+    setJobId(data.jobId)
+  }
+
+  useEffect(() => {
+    if (!jobId) return
+
+    const interval = setInterval(async () => {
+      const res = await fetch(`/api/jobs/${jobId}`)
+      const data = await res.json()
+
+      if (data.status === 'done') {
+        setResult(data.result_url)
+        setLoading(false)
+        clearInterval(interval)
+      }
+
+      if (data.status === 'failed') {
+        setLoading(false)
+        clearInterval(interval)
+      }
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [jobId])
+
+  return (
+    <div className="max-w-4xl mx-auto p-6 space-y-6">
+
+      {/* Upload */}
+      <input
+        type="file"
+        accept="image/*"
+        onChange={(e) =>
+          // 實作時請改為上傳至 Supabase Storage 的邏輯
+          setImageUrl(URL.createObjectURL(e.target.files![0]))
+        }
+      />
+
+      {/* Style Selector */}
+      <div className="grid grid-cols-3 gap-4">
+        {['luxury_marble','minimal_studio','outdoor_nature'].map(s => (
+          <button
+            key={s}
+            onClick={() => setStyle(s)}
+            className={`p-4 border rounded-xl ${
+              style === s ? 'border-black' : ''
+            }`}
+          >
+            {t(`style_${s.split('_')[0]}`)}
+          </button>
+        ))}
+      </div>
+
+      {/* Generate */}
+      <button
+        disabled={!imageUrl || !style || loading}
+        onClick={generate}
+        className="px-6 py-3 bg-black text-white rounded-xl disabled:opacity-50"
+      >
+        {loading ? t('loading') : t('generate')}
+      </button>
+
+      {/* Result */}
+      {result && imageUrl && (
+        <ReactCompareSlider
+          itemOne={<img src={imageUrl} alt="Original" />}
+          itemTwo={<img src={result} alt="Result" />}
+        />
+      )}
+    </div>
+  )
+}
+
+---------------------------------------------------
+
+Credit Counter Component
+檔案路徑：components/CreditCounter.tsx
+
+'use client'
+
+import { useEffect, useState } from 'react'
+
+export default function CreditCounter() {
+  const [credits, setCredits] = useState(0)
+
+  useEffect(() => {
+    // 需實作 /api/profile 路由來獲取用戶資料
+    fetch('/api/profile')
+      .then(r => r.json())
+      .then(d => setCredits(d.credits))
+  }, [])
+
+  return (
+    <div className="text-sm">
+      Credits: {credits}
+    </div>
+  )
+}
+
+---------------------------------------------------
+
+messages/en.json（完整）
+檔案路徑：messages/en.json
+
+{
+  "login": "Sign in with Google",
+  "generate": "Generate",
+  "loading": "AI is designing your product...",
+  "style_luxury": "Luxury Marble",
+  "style_minimal": "Minimal Studio",
+  "style_outdoor": "Outdoor Nature"
+}
+
+備註：其餘 9 個語言檔請用同 key 翻譯即可（結構一致）。
+
+---------------------------------------------------
+
+部署流程（最終）
+
+1. Supabase
+- 建立專案
+- 執行 SQL migration
+- 開啟 Google OAuth (Authentication -> Providers)
+- 建立 Storage bucket (命名為 'uploads' 並設定 Public)
+
+2. Lemon Squeezy
+- 建立 Store 與 Product
+- 建立 Checkout link
+- 設定 Webhook URL：https://yourdomain.com/api/webhooks/lemonsqueezy
+- 勾選訂單建立 (order_created) 事件
+
+3. Vercel
+- 安裝 Vercel CLI 或連結 GitHub
+- 設定 Environment Variables (將 .env.local 的內容填入)
+- 部署 (Deploy)

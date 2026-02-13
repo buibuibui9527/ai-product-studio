@@ -1,0 +1,21 @@
+{
+  "login": "使用 Google 登录",
+  "logout": "登出",
+  "welcome": "用 AI 转换你的产品照片",
+  "login_description": "免费获得 3 点数开始使用",
+  "generate": "生成",
+  "processing": "AI 正在设计你的产品...",
+  "loading": "加载中...",
+  "upload_image": "上传你的产品图片",
+  "click_to_upload": "点击上传或拖放文件",
+  "select_style": "选择你的风格",
+  "result": "前后对比",
+  "download": "下载结果",
+  "credits": "点数",
+  "style_luxury": "奢华大理石",
+  "style_minimal": "极简工作室",
+  "style_outdoor": "户外自然",
+  "style_luxury_marble_desc": "高级大理石背景搭配电影级打光",
+  "style_minimal_studio_desc": "干净的白色工作室搭配柔和阴影",
+  "style_outdoor_nature_desc": "自然户外环境搭配日光"
+}

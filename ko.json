@@ -1,0 +1,21 @@
+{
+  "login": "Google로 로그인",
+  "logout": "로그아웃",
+  "welcome": "AI로 제품 사진 변환",
+  "login_description": "무료 크레딧 3개로 시작하세요",
+  "generate": "생성",
+  "processing": "AI가 제품을 디자인하고 있습니다...",
+  "loading": "로딩 중...",
+  "upload_image": "제품 이미지 업로드",
+  "click_to_upload": "클릭하거나 드래그 앤 드롭으로 업로드",
+  "select_style": "스타일 선택",
+  "result": "전후 비교",
+  "download": "결과 다운로드",
+  "credits": "크레딧",
+  "style_luxury": "럭셔리 대리석",
+  "style_minimal": "미니멀 스튜디오",
+  "style_outdoor": "야외 자연",
+  "style_luxury_marble_desc": "시네마틱 조명의 프리미엄 대리석 배경",
+  "style_minimal_studio_desc": "부드러운 그림자의 깨끗한 화이트 스튜디오",
+  "style_outdoor_nature_desc": "자연광의 야외 환경"
+}

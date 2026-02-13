@@ -1,0 +1,21 @@
+{
+  "login": "Iniciar sesión con Google",
+  "logout": "Cerrar sesión",
+  "welcome": "Transforma tus fotos de productos con IA",
+  "login_description": "Obtén 3 créditos gratis para empezar",
+  "generate": "Generar",
+  "processing": "La IA está diseñando tu producto...",
+  "loading": "Cargando...",
+  "upload_image": "Sube tu imagen de producto",
+  "click_to_upload": "Haz clic para subir o arrastra y suelta",
+  "select_style": "Elige tu estilo",
+  "result": "Comparación antes y después",
+  "download": "Descargar resultado",
+  "credits": "Créditos",
+  "style_luxury": "Mármol de lujo",
+  "style_minimal": "Estudio minimalista",
+  "style_outdoor": "Naturaleza al aire libre",
+  "style_luxury_marble_desc": "Fondo de mármol premium con iluminación cinematográfica",
+  "style_minimal_studio_desc": "Estudio blanco limpio con sombras suaves",
+  "style_outdoor_nature_desc": "Ambiente natural al aire libre con luz del día"
+}

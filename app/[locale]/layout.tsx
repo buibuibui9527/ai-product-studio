@@ -1,4 +1,4 @@
-import './globals.css';
+import './glo.css';
 import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';

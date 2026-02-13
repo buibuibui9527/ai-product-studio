@@ -1,51 +1,26 @@
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
-import { ReactNode } from 'react'
-import './globals.css'
+import './globals.css';
+import { Inter } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
-export default async function LocaleLayout({
+const inter = Inter({ subsets: ['latin'] });
+
+export default async function RootLayout({
   children,
-  params
+  params: { locale }
 }: {
-  children: ReactNode
-  params: Promise<{ locale: string }>
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
-  const { locale } = await params
-  
-  let messages;
-  try {
-    messages = await getMessages();
-  } catch (error) {
-    console.error("Failed to load messages", error);
-    // Fallback messages or handle error
-  }
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
-      <body>
-        {messages ? (
-          <NextIntlClientProvider messages={messages} locale={locale}>
-            {children}
-          </NextIntlClientProvider>
-        ) : (
-          children
-        )}
+      <body className={inter.className}>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
-  )
-}
-
-export function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'zh-TW' },
-    { locale: 'zh-CN' },
-    { locale: 'ja' },
-    { locale: 'ko' },
-    { locale: 'es' },
-    { locale: 'pt' },
-    { locale: 'de' },
-    { locale: 'fr' },
-    { locale: 'it' }
-  ]
+  );
 }
